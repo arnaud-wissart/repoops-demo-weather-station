@@ -5,11 +5,24 @@ type ForecastCard = {
   wind: string;
 };
 
+type TrendPoint = {
+  hour: string;
+  value: string;
+};
+
 const forecast: ForecastCard[] = [
   { day: "Lundi", summary: "Ensoleillé", temperature: "21°C", wind: "12 km/h" },
   { day: "Mardi", summary: "Éclaircies", temperature: "18°C", wind: "18 km/h" },
   { day: "Mercredi", summary: "Averses", temperature: "15°C", wind: "24 km/h" },
   { day: "Jeudi", summary: "Nuageux", temperature: "17°C", wind: "10 km/h" }
+];
+
+const trend: TrendPoint[] = [
+  { hour: "06h", value: "11°C" },
+  { hour: "09h", value: "14°C" },
+  { hour: "12h", value: "18°C" },
+  { hour: "15h", value: "20°C" },
+  { hour: "18h", value: "17°C" }
 ];
 
 export default function App() {
@@ -41,6 +54,25 @@ export default function App() {
             <p className="forecast-wind">Vent : {card.wind}</p>
           </article>
         ))}
+      </section>
+
+      <section className="trend-panel">
+        <div className="trend-header">
+          <div>
+            <p className="kicker">Tendance horaire</p>
+            <h2>Variation de température sur la journée</h2>
+          </div>
+          <span className="hero-badge">Prévision locale</span>
+        </div>
+
+        <div className="trend-grid">
+          {trend.map((point) => (
+            <article key={point.hour} className="trend-card">
+              <span>{point.hour}</span>
+              <strong>{point.value}</strong>
+            </article>
+          ))}
+        </div>
       </section>
     </main>
   );
