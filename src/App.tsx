@@ -29,6 +29,7 @@ export default function App() {
           <span className="hero-badge">Démo publique</span>
           <strong>Station de Lyon</strong>
           <span>Dernière mise à jour : 08:40</span>
+          <span>Indice de confiance : 96 %</span>
         </div>
       </section>
 
