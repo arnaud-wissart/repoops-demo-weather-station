@@ -84,6 +84,54 @@ h1 {
   margin-top: 28px;
 }
 
+.trend-panel {
+  margin-top: 28px;
+  background: white;
+  border: 1px solid #d9e1ec;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.04);
+}
+
+.trend-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+}
+
+.trend-header h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.trend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.trend-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #d9e1ec;
+}
+
+.trend-card span {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.trend-card strong {
+  font-size: 28px;
+}
+
 .forecast-card {
   background: white;
   border: 1px solid #d9e1ec;
@@ -117,6 +165,10 @@ h1 {
 
 @media (max-width: 768px) {
   .hero {
+    flex-direction: column;
+  }
+
+  .trend-header {
     flex-direction: column;
   }
 
