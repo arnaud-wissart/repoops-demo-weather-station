@@ -12,6 +12,11 @@ const forecast: ForecastCard[] = [
   { day: "Jeudi", summary: "Nuageux", temperature: "17°C", wind: "10 km/h" }
 ];
 
+const alertSummary = {
+  level: "Surveillance",
+  message: "Rafales annoncées mercredi après-midi."
+};
+
 export default function App() {
   return (
     <main className="app-shell">
@@ -30,6 +35,12 @@ export default function App() {
           <strong>Station de Lyon</strong>
           <span>Dernière mise à jour : 08:40</span>
         </div>
+      </section>
+
+      <section className="hero-side" aria-label="Alerte locale">
+        <span className="hero-badge">{alertSummary.level}</span>
+        <strong>{alertSummary.title}</strong>
+        <span>{alertSummary.message}</span>
       </section>
 
       <section className="panel-grid">
